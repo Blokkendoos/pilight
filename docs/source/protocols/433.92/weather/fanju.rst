@@ -111,22 +111,23 @@ This protocol has similarities with the auriol protocol.
 The message comprises 10 nibbles, resulting in a total length of 40 bits.
 The bits have the following specific meaning:
 
-               1    1    2    2    2    3    3
-0    4    8    2    6    0    4    8    2    6
-
-0010 0001 1000 1100 0110 0101 1000 0011 0101 0010 
-2    1    8    12   6    5    8    3    5    2   
-AAAA AAAA BBBB xyzz CCCC CCCC CCCC DDDD DDDD EEFF
-
-A - rolling-code
-B - checksum
-B - x 0=scheduled, 1=requested transmission
-    y 0=ok, 1=battery low
-	zz <unknown>
-C - temperature in Fahrenheit (binary)
-D - humidity (BCD)
-E - <unknown>
-F - channel
+.. code-block:: console
+	               1    1    2    2    2    3    3
+	0... 4... 8... 2... 6... 0... 4... 8... 2... 6...
+	
+	0010 0001 1000 1100 0110 0101 1000 0011 0101 0010
+	2    1    8    12   6    5    8    3    5    2
+	AAAA AAAA BBBB xyzz CCCC CCCC CCCC DDDD DDDD EEFF
+	
+	A - rolling-code
+	B - checksum
+	B - x 0=scheduled, 1=requested transmission
+	    y 0=ok, 1=battery low
+		zz <unknown>
+	C - temperature in Fahrenheit (binary)
+	D - humidity (BCD)
+	E - <unknown>
+	F - channel
 
 .. rubric:: Checksum
 
